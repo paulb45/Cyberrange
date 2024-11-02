@@ -1,0 +1,42 @@
+networks:
+  intranet:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.0.0.0/24
+
+  internet:
+    driver: bridge
+
+services:
+  routeur:
+    image: alpine:latest
+    networks:
+      internet: {}
+      intranet:
+        ipv4_address: 10.0.0.254
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      - net.ipv4.ip_forward=1
+    volumes:
+      - ./routeur-conf.sh:/routeur-conf.sh
+    command: |
+      /bin/sh -c "
+      /routeur-conf.sh
+      tail -f /dev/null
+      "
+
+  virtual1:
+    image: alpine:latest
+    networks:
+      intranet:
+        ipv4_address: 10.0.0.10
+    cap_add:
+      - NET_ADMIN
+    command: |
+      /bin/sh -c "
+      ip route replace default via 10.0.0.254
+      tail -f /dev/null
+      "
