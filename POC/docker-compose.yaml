@@ -1,10 +1,24 @@
 networks:
-  intranet:
+  vlan_admin:
     driver: bridge
     internal: true
     ipam:
       config:
         - subnet: 10.0.0.0/24
+
+  vlan_attaque:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.0.1.0/24
+
+  vlan_serveurs:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.0.2.0/24
 
   internet:
     driver: bridge
@@ -14,8 +28,12 @@ services:
     image: alpine:latest
     networks:
       internet: {}
-      intranet:
+      vlan_admin:
         ipv4_address: 10.0.0.254
+      vlan_attaque:
+        ipv4_address: 10.0.1.254
+      vlan_serveurs:
+        ipv4_address: 10.0.2.254
     cap_add:
       - NET_ADMIN
     sysctls:
@@ -31,7 +49,7 @@ services:
   virtual1:
     image: alpine:latest
     networks:
-      intranet:
+      vlan_admin:
         ipv4_address: 10.0.0.10
     cap_add:
       - NET_ADMIN
@@ -40,3 +58,17 @@ services:
       ip route replace default via 10.0.0.254
       tail -f /dev/null
       "
+
+  virtual2:
+    image: alpine:latest
+    networks:
+      vlan_serveurs:
+        ipv4_address: 10.0.2.2
+    cap_add:
+      - NET_ADMIN
+    command: |
+      /bin/sh -c "
+      ip route replace default via 10.0.2.254
+      tail -f /dev/null
+      "
+
