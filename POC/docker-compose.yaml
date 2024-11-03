@@ -46,7 +46,7 @@ services:
       tail -f /dev/null
       "
 
-  virtual1:
+  ansible:
     image: alpine:latest
     networks:
       vlan_admin:
@@ -56,6 +56,24 @@ services:
     command: |
       /bin/sh -c "
       ip route replace default via 10.0.0.254
+      apk add --no-cache ansible
+      apk add --no-cache openssh
+      ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ''
+      tail -f /dev/null
+      "
+
+  virtual1:
+    image: alpine:latest
+    networks:
+      vlan_serveurs:
+        ipv4_address: 10.0.2.10
+    cap_add:
+      - NET_ADMIN
+    command: |
+      /bin/sh -c "
+      ip route replace default via 10.0.2.254
+      apk add --no-cache python3
+      apk add --no-cache openssh
       tail -f /dev/null
       "
 
@@ -63,12 +81,14 @@ services:
     image: alpine:latest
     networks:
       vlan_serveurs:
-        ipv4_address: 10.0.2.2
+        ipv4_address: 10.0.2.11
     cap_add:
       - NET_ADMIN
     command: |
       /bin/sh -c "
       ip route replace default via 10.0.2.254
+      apk add --no-cache python3
+      apk add --no-cache openssh
       tail -f /dev/null
       "
 
