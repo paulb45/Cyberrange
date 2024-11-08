@@ -1,94 +1,45 @@
 networks:
-  vlan_admin:
+  vlan_ansible:
     driver: bridge
     internal: true
     ipam:
       config:
-        - subnet: 10.0.0.0/24
+        - subnet: 10.1.0.0/16
 
-  vlan_attaque:
+  admin:
     driver: bridge
-    internal: true
-    ipam:
-      config:
-        - subnet: 10.0.1.0/24
-
-  vlan_serveurs:
-    driver: bridge
-    internal: true
-    ipam:
-      config:
-        - subnet: 10.0.2.0/24
 
   internet:
     driver: bridge
 
-services:
-  routeur:
-    image: alpine:latest
-    networks:
-      internet: {}
-      vlan_admin:
-        ipv4_address: 10.0.0.254
-      vlan_attaque:
-        ipv4_address: 10.0.1.254
-      vlan_serveurs:
-        ipv4_address: 10.0.2.254
-    cap_add:
-      - NET_ADMIN
-    sysctls:
-      - net.ipv4.ip_forward=1
-    volumes:
-      - ./routeur-conf.sh:/routeur-conf.sh
-    command: |
-      /bin/sh -c "
-      /routeur-conf.sh
-      tail -f /dev/null
-      "
 
+services:
   ansible:
-    image: alpine:latest
+    build: ansible
     networks:
-      vlan_admin:
-        ipv4_address: 10.0.0.10
-    cap_add:
-      - NET_ADMIN
-    command: |
-      /bin/sh -c "
-      ip route replace default via 10.0.0.254
-      apk add --no-cache ansible
-      apk add --no-cache openssh
-      ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ''
-      tail -f /dev/null
-      "
+      admin: {}
+      vlan_ansible:
+        ipv4_address: 10.1.255.254
+    volumes:
+      - ./tmp:/tmp/ssh:ansible
 
   virtual1:
-    image: alpine:latest
+    build: serveur-alpine
     networks:
-      vlan_serveurs:
-        ipv4_address: 10.0.2.10
-    cap_add:
-      - NET_ADMIN
-    command: |
-      /bin/sh -c "
-      ip route replace default via 10.0.2.254
-      apk add --no-cache python3
-      apk add --no-cache openssh
-      tail -f /dev/null
-      "
+      vlan_ansible:
+        ipv4_address: 10.1.2.10
+    volumes:
+      - ./tmp:/tmp/ssh:ansible
 
-  virtual2:
-    image: alpine:latest
-    networks:
-      vlan_serveurs:
-        ipv4_address: 10.0.2.11
-    cap_add:
-      - NET_ADMIN
-    command: |
-      /bin/sh -c "
-      ip route replace default via 10.0.2.254
-      apk add --no-cache python3
-      apk add --no-cache openssh
-      tail -f /dev/null
-      "
+#  virtual2:
+#    build: serveur-alpine
+#    networks:
+#      vlan_ansible:
+#        ipv4_address: 10.1.2.11
+#    cap_add:
+#      - NET_ADMIN
+#    command: |
+#      /bin/sh -c "
+#      tail -f /dev/null
+#      "
 
