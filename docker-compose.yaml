@@ -15,31 +15,26 @@ networks:
 
 services:
   ansible:
-    build: ansible
+    build: ./docker-images/ansible-serveur
     networks:
       admin: {}
       vlan_ansible:
         ipv4_address: 10.1.255.254
     volumes:
-      - ./tmp:/tmp/ssh:ansible
+      - ./docker-volumes/tmp:/tmp/ssh:ansible
 
   virtual1:
-    build: serveur-alpine
+    build: ./docker-images/alpine-serveur
     networks:
       vlan_ansible:
         ipv4_address: 10.1.2.10
     volumes:
-      - ./tmp:/tmp/ssh:ansible
+      - ./docker-volumes/tmp:/tmp/ssh:ansible
 
-#  virtual2:
-#    build: serveur-alpine
-#    networks:
-#      vlan_ansible:
-#        ipv4_address: 10.1.2.11
-#    cap_add:
-#      - NET_ADMIN
-#    command: |
-#      /bin/sh -c "
-#      tail -f /dev/null
-#      "
-
+  virtual2:
+    build: ./docker-images/alpine-serveur
+    networks:
+      vlan_ansible:
+        ipv4_address: 10.1.2.11
+    volumes:
+      - ./docker-volumes/tmp:/tmp/ssh:ansible
