@@ -3,5 +3,5 @@
 *.bak
 
 /POC/tmp/
-/docker-volumes/
+/docker-volumes/tmp/
 
