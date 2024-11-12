@@ -22,6 +22,7 @@ services:
         ipv4_address: 10.1.255.254
     volumes:
       - ./docker-volumes/tmp:/tmp/ssh:ansible
+      - ./docker-volumes/ansible:/home/ansible/ansible
 
   virtual1:
     build: ./docker-images/alpine-serveur
