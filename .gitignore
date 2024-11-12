@@ -1,6 +1,7 @@
 *.save
 *.pub
+*.bak
 
 /POC/tmp/
-
+/docker-volumes/
 
