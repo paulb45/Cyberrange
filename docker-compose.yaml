@@ -5,7 +5,12 @@ networks:
     ipam:
       config:
         - subnet: 10.1.0.0/16
-
+  vlan_lambda:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet 10.2.0.0/16
   admin:
     driver: bridge
 
@@ -21,7 +26,7 @@ services:
       vlan_ansible:
         ipv4_address: 10.1.255.254
     volumes:
-      - ./docker-volumes/tmp:/tmp/ssh:ansible
+      - ./docker-volumes/tmp:/tmp/ssh
       - ./docker-volumes/ansible:/home/ansible/ansible
 
   virtual1:
@@ -29,13 +34,17 @@ services:
     networks:
       vlan_ansible:
         ipv4_address: 10.1.2.10
+      vlan_lambda:
+        ipv4_adress: 10.2.2.10
     volumes:
-      - ./docker-volumes/tmp:/tmp/ssh:ansible
+      - ./docker-volumes/tmp:/tmp/ssh
 
   virtual2:
     build: ./docker-images/alpine-serveur
     networks:
       vlan_ansible:
         ipv4_address: 10.1.2.11
+      vlan_lambda:
+        ipv4_address: 10.2.2.11
     volumes:
-      - ./docker-volumes/tmp:/tmp/ssh:ansible
+      - ./docker-volumes/tmp:/tmp/ssh
