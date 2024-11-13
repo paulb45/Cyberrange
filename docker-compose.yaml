@@ -10,7 +10,7 @@ networks:
     internal: true
     ipam:
       config:
-        - subnet 10.2.0.0/16
+        - subnet: 10.2.0.0/16
   admin:
     driver: bridge
 
@@ -35,7 +35,7 @@ services:
       vlan_ansible:
         ipv4_address: 10.1.2.10
       vlan_lambda:
-        ipv4_adress: 10.2.2.10
+        ipv4_address: 10.2.2.10
     volumes:
       - ./docker-volumes/tmp:/tmp/ssh
 
