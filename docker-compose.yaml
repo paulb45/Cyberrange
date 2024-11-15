@@ -43,6 +43,11 @@ services:
     volumes:
       - ./docker-volumes/tmp:/tmp/ssh
       - ./docker-volumes/ansible:/home/ansible/ansible
+    healthcheck:
+      test: ["CMD", "ps", "aux", "|", "grep", "tail -f /dev/null"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
 
   virtual1:
     build: ./docker-images/alpine-serveur
@@ -53,6 +58,9 @@ services:
         ipv4_address: 10.0.1.10
     volumes:
       - ./docker-volumes/tmp:/tmp/ssh
+    depends_on:
+      ansible:
+        condition: service_healthy
 
   virtual2:
     build: ./docker-images/alpine-serveur
@@ -63,6 +71,9 @@ services:
         ipv4_address: 10.0.1.11
     volumes:
       - ./docker-volumes/tmp:/tmp/ssh
+    depends_on:
+      ansible:
+        condition: service_healthy
 
   pc1:
     build: ./docker-images/alpine-serveur
@@ -73,7 +84,9 @@ services:
         ipv4_address: 10.0.2.10
     volumes:
       - ./docker-volumes/tmp:/tmp/ssh
-
+    depends_on:
+      ansible:
+        condition: service_healthy
 
   pc2:
     build: ./docker-images/alpine-serveur
@@ -84,6 +97,9 @@ services:
         ipv4_address: 10.0.2.11
     volumes:
       - ./docker-volumes/tmp:/tmp/ssh
+    depends_on:
+      ansible:
+        condition: service_healthy
 
   virtualdmz1:
     build: ./docker-images/alpine-serveur
@@ -94,6 +110,9 @@ services:
         ipv4_address: 10.0.3.10
     volumes:
       - ./docker-volumes/tmp:/tmp/ssh
+    depends_on:
+      ansible:
+        condition: service_healthy
 
   routeur:
     build: ./docker-images/alpine-serveur
@@ -108,3 +127,7 @@ services:
         ipv4_address: 10.0.3.254
     volumes:
       - ./docker-volumes/tmp:/tmp/ssh
+    depends_on:
+      ansible:
+        condition: service_healthy
+
