@@ -76,7 +76,7 @@ services:
         condition: service_healthy
 
   pc1:
-    build: ./docker-images/alpine-serveur
+    build: ./docker-images/debian-client
     networks:
       vlan_ansible:
         ipv4_address: 10.1.2.10
@@ -89,7 +89,7 @@ services:
         condition: service_healthy
 
   pc2:
-    build: ./docker-images/alpine-serveur
+    build: ./docker-images/debian-client
     networks:
       vlan_ansible:
         ipv4_address: 10.1.2.11
