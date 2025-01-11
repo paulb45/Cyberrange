@@ -37,6 +37,8 @@ services:
   ansible:
     build: ./docker-images/ansible-serveur
     hostname: ansible
+    cap_add:
+      - NET_ADMIN
     networks:
       admin: {}
       vlan_ansible:
@@ -53,6 +55,8 @@ services:
   virtual1:
     build: ./docker-images/alpine-serveur
     hostname: virtual1
+    cap_add:
+      - NET_ADMIN
     networks:
       vlan_ansible:
         ipv4_address: 10.1.1.10
