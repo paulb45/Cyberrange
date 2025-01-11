@@ -1,5 +1,5 @@
 FROM alpine:latest
-RUN apk add --update --no-cache openssh python3 sudo
+RUN apk add --update --no-cache openssh python3 openrc sudo
 RUN echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config
 RUN echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 RUN adduser -h /home/ansible -s /bin/sh -D ansible
