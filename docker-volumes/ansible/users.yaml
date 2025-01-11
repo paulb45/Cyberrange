@@ -1,0 +1,12 @@
+- name: Création des utilisateurs généraux
+  hosts: serveurs, clients
+  become: true
+
+  tasks:
+  - name: Création de l'utilisateur admin
+    user:
+      name: admin
+      state: present
+      groups: sudo
+      append: yes
+      password: "{{ 'admin' | password_hash('sha512') }}"
