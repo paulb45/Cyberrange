@@ -1,4 +1,5 @@
 #!/bin/sh
+sudo /sbin/openrc default
 
 mkdir -p /home/ansible/.ssh
 

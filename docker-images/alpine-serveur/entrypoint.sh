@@ -1,4 +1,6 @@
 #!/bin/sh
+sudo /sbin/openrc default
+
 sudo ssh-keygen -A
 
 # récupération de la clé publique du serveur ansible
