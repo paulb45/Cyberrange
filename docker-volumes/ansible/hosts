@@ -1,4 +1,18 @@
-[serveurs]
-10.1.[1:2].[10:11]
-10.1.3.10
-10.1.0.254
+all:
+  children:
+    reseau:
+      children:
+        routeur:
+          hosts:
+            10.1.0.254:
+    serveurs:
+      children:
+        lan:
+          hosts:
+            10.1.1.[10:11]:
+        dmz:
+          hosts:
+            10.1.3.10:
+    clients:
+      hosts:
+        10.1.2.[10:11]:
