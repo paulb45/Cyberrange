@@ -1,0 +1,54 @@
+---
+- name: Install DVWA on virtualdmz1
+  hosts: dmz
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Install dependencies
+      apt:
+        name:
+          - apache2
+          - php
+          - php-mysqli
+          - php-gd
+          - libapache2-mod-php
+          - curl
+          - git
+        state: present
+        update_cache: yes
+
+    - name: Enable and start Apache
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Clone DVWA from GitHub
+      git:
+        repo: 'https://github.com/digininja/DVWA.git'
+        dest: /var/www/html/DVWA
+        version: HEAD
+
+    - name: Set ownership for DVWA files
+      file:
+        path: /var/www/html/DVWA
+        owner: www-data
+        group: www-data
+        recurse: yes
+
+    - name: Copy DVWA config file
+      copy:
+        src: /var/www/html/DVWA/config/config.inc.php.dist
+        dest: /var/www/html/DVWA/config/config.inc.php
+        remote_src: yes
+
+    - name: Update DVWA config for remote database
+      lineinfile:
+        path: /var/www/html/DVWA/config/config.inc.php
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+        state: present
+      with_items:
+        - { regexp: "^\\$_DVWA\\[ 'db_server' \\].*", line: "\\$_DVWA[ 'db_server' ] = '10.0.1.11';" }
+        - { regexp: "^\\$_DVWA\\[ 'db_user' \\].*", line: "\\$_DVWA[ 'db_user' ] = 'dvwa_user';" }
+        - { regexp: "^\\$_DVWA\\[ 'db_password' \\].*", line: "\\$_DVWA[ 'db_password' ] = 'secure_password';" }

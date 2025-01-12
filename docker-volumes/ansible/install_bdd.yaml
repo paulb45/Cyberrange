@@ -1,0 +1,35 @@
+---
+- name: Install and configure MariaDB on virtual1
+  hosts: virtual1
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Install MariaDB server
+      apt:
+        name: mariadb-server
+        state: present
+        update_cache: yes
+
+    - name: Install PyMySQL
+      apt:
+        name: python3-pymysql
+        state: present
+        update_cache: yes
+
+    - name: Enable and start MariaDB service
+      service:
+        name: mariadb
+        state: started
+        enabled: yes
+
+    - name: Create DVWA database
+      command: mysql -e "CREATE DATABASE dvwa_db;"
+
+    - name: Create DVWA user
+      command: mysql -e "CREATE USER 'dvwa'@'localhost' IDENTIFIED BY 'azerty';"
+
+    - name: Granted privileges for DVWA
+      command: mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'dvwa'@'localhost' IDENTIFIED BY 'azerty';"
+
+    - name: Flush privileges
+      command: mysql -e "FLUSH PRIVILEGES"
