@@ -4,15 +4,29 @@ all:
       children:
         routeur:
           hosts:
-            10.1.0.254:
+            ansible:
+              ansible_host: 10.1.0.254
+              hostname: ansible
     serveurs:
       children:
         lan:
           hosts:
-            10.1.1.[10:11]:
+            virtual1:
+              ansible_host: 10.1.1.10
+              hostname: virtual1
+            virtual2:
+              ansible_host: 10.1.1.11
+              hostname: virtual2
         dmz:
           hosts:
-            10.1.3.10:
+            virtualdmz1:
+              ansible_host: 10.1.3.10
+              hostname: virtualdmz1
     clients:
       hosts:
-        10.1.2.[10:11]:
+        pc1:
+          ansible_host: 10.1.2.10
+          hostname: pc1
+        pc2:
+          ansible_host: 10.1.2.11
+          hostname: pc2
