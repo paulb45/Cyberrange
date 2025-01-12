@@ -89,7 +89,7 @@ services:
         condition: service_healthy
 
   pc1:
-    build: ./docker-images/debian-client
+    build: ./docker-images/debian-serveur
     hostname: pc1
     networks:
       vlan_ansible:
@@ -103,7 +103,7 @@ services:
         condition: service_healthy
 
   pc2:
-    build: ./docker-images/debian-client
+    build: ./docker-images/debian-serveur
     hostname: pc2
     networks:
       vlan_ansible:
