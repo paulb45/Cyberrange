@@ -1,5 +1,5 @@
 - name: Create and execute a bash script
-  hosts: all
+  hosts: routeur
   become: true
   become_method: sudo
 
@@ -9,7 +9,58 @@
         dest: /tmp/my_script.sh
         content: |
           #!/bin/bash
-          echo "Hello, World!"
+          # Configuration des regles iptables
+          apt-get update
+          apt-get install iptables -y
+          ## Autoriser le trafic sur l'interface loopback
+          iptables -A INPUT -i lo -j ACCEPT
+
+          ## Autoriser les connexions etablies et associees
+          iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+          ## Configuration du forwarding entre les interfaces
+          ### eth0 - internet
+          iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
+          iptables -A FORWARD -i eth0 -o eth2 -j ACCEPT
+          iptables -A FORWARD -i eth0 -o eth3 -j ACCEPT
+          iptables -A FORWARD -i eth0 -o eth4 -j ACCEPT
+
+          ###  eth1 - dmz
+          iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
+          iptables -A FORWARD -i eth1 -o eth3 -j ACCEPT
+          iptables -A FORWARD -i eth1 -o eth4 -j ACCEPT
+
+          ###  eth2 - vlan_ansible
+          iptables -A FORWARD -i eth2 -o eth0 -j ACCEPT
+
+          ###  eth3 - vlan_postes
+          iptables -A FORWARD -i eth3 -o eth0 -j ACCEPT
+          iptables -A FORWARD -i eth3 -o eth1 -j ACCEPT
+          iptables -A FORWARD -i eth3 -o eth4 -j ACCEPT
+
+          ###  eth4 - vlan_serveurs
+          iptables -A FORWARD -i eth4 -o eth0 -j ACCEPT
+          iptables -A FORWARD -i eth4 -o eth1 -j ACCEPT
+          iptables -A FORWARD -i eth4 -o eth3 -j ACCEPT
+
+
+          ## Configuration du NAT pour la sortie
+          iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+          ## Politiques par defaut : bloquer le trafic entrant et le forwarding, autoriser le trafic sortant
+          iptables -P FORWARD DROP
+          iptables -P INPUT DROP
+          iptables -P OUTPUT ACCEPT
+
+          # Configuration des routes
+          ## Ajouter une route pour le reseau interne
+          #ip route add 10.0.1.0/24 dev eth4
+          #ip route add 10.0.2.0/24 dev eth3
+          #ip route add 10.0.3.0/24 dev eth1
+          #ip route add 10.1.0.0/16 dev eth2
+
+          ## Definir la route par defaut
+          #ip route add default dev eth0
           # Add any commands you want to run here
         mode: '0755'
 
