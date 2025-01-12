@@ -22,4 +22,5 @@ sudo docker compose exec -T -u ansible virtual3 /bin/bash -c "./start.sh"
 sudo docker compose exec -T -u ansible ansible /bin/sh -c "cd /home/ansible/ansible/ && \
 	ansible-playbook users.yaml && \
 	ansible-playbook networkconfig.yaml && \
-	ansible-playbook routeuriptables.yaml"
+	ansible-playbook routeuriptables.yaml && \
+	ansible-playbook rsyslog.yaml"

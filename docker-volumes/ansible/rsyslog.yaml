@@ -1,0 +1,56 @@
+- name: Configuration du serveur rsyslog
+  hosts: virtual3
+  become: true
+
+  tasks:
+  - name: Installation du service rsyslog
+    apt:
+      name: rsyslog
+      state: present
+        
+  - name: Activation du module imtcp
+    replace:
+      path: /etc/rsyslog.conf
+      regexp: '^#({{ item | regex_escape() }}.*)$'
+      replace: '\1'
+    loop:
+      - "module(load=\"imtcp\")"
+      - "input(type=\"imtcp\""
+
+  - name: Règle pour les logs
+    blockinfile:
+      path: /etc/rsyslog.conf
+      block: |
+        $template DynamicFile,"/rsyslog/%HOSTNAME%.log"
+        *.* ?DynamicFile
+        & stop
+  
+  - name: Demarrage de rsyslog service
+    service:
+      name: rsyslog
+      state: started
+      enabled: true
+
+
+
+- name: Configuration du serveur rsyslog pour les clients
+  hosts: all 
+  become: true
+    
+  tasks:
+  - name: Install rsyslog package
+    apt:
+      name: rsyslog
+      state: present
+
+  - name: Configuration de l'envoie des logs vers virtual3
+    lineinfile:
+      path: /etc/rsyslog.conf
+      line: "*.* @@10.1.1.12:514"
+      insertafter: EOF 
+
+  - name: Demarrage de rsyslog service
+    service:
+      name: rsyslog
+      state: started
+      enabled: true
