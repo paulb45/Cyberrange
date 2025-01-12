@@ -147,6 +147,7 @@ services:
     hostname: routeur
     privileged: true
     networks:
+      internet: {}
       vlan_ansible:
         ipv4_address: 10.1.0.254
       vlan_serveurs:

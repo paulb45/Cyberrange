@@ -1,0 +1,23 @@
+- name: Create and execute a bash script
+  hosts: all
+  become: true
+  become_method: sudo
+
+  tasks:
+    - name: Create a bash script file
+      copy:
+        dest: /tmp/my_script.sh
+        content: |
+          #!/bin/bash
+          echo "Hello, World!"
+          # Add any commands you want to run here
+        mode: '0755'
+
+    - name: Execute the bash script
+      command: /tmp/my_script.sh
+      register: script_output
+      ignore_errors: yes
+
+    - name: Show script output
+      debug:
+        var: script_output.stdout

@@ -1,7 +1,7 @@
 FROM debian:latest
 
 RUN apt-get update
-RUN apt-get install openssh-server python3 sudo systemd vim net-tools -y
+RUN apt-get install openssh-server python3 sudo systemd vim iputils-ping net-tools iproute2 -y
 RUN rm -fr /var/lib/apt/lists/* /var/tmp/*
 
 RUN echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config
