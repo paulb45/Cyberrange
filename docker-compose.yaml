@@ -53,10 +53,12 @@ services:
       retries: 3
 
   virtual1:
-    build: ./docker-images/alpine-serveur
+    build: ./docker-images/debian-serveur
     hostname: virtual1
     cap_add:
       - NET_ADMIN
+      - SYS_ADMIN
+    privileged: true
     networks:
       vlan_ansible:
         ipv4_address: 10.1.1.10
@@ -69,8 +71,12 @@ services:
         condition: service_healthy
 
   virtual2:
-    build: ./docker-images/alpine-serveur
+    build: ./docker-images/debian-serveur
     hostname: virtual2
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    privileged: true
     networks:
       vlan_ansible:
         ipv4_address: 10.1.1.11
@@ -111,8 +117,12 @@ services:
         condition: service_healthy
 
   virtualdmz1:
-    build: ./docker-images/alpine-serveur
+    build: ./docker-images/debian-serveur
     hostname: virtualdmz1
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    privileged: true
     networks:
       vlan_ansible:
         ipv4_address: 10.1.3.10
@@ -125,8 +135,9 @@ services:
         condition: service_healthy
 
   routeur:
-    build: ./docker-images/alpine-serveur
+    build: ./docker-images/debian-serveur
     hostname: routeur
+    privileged: true
     networks:
       vlan_ansible:
         ipv4_address: 10.1.0.254

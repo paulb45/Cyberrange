@@ -1,0 +1,14 @@
+#!/bin/bash
+sudo docker compose up -d
+
+sleep 5
+
+#sudo docker compose exec -T virtual1 /bin/bash -c "systemctl start sshd && chown -R ansible:ansible /home/ansible/.ssh/authorized_keys"
+#sudo docker compose exec -T virtual2 /bin/bash -c "systemctl start sshd && chown -R ansible:ansible /home/ansible/.ssh/authorized_keys"
+#sudo docker compose exec -T virtualdmz1 /bin/bash -c "systemctl start sshd && chown -R ansible:ansible /home/ansible/.ssh/authorized_keys"
+#sudo docker compose exec -T routeur /bin/bash -c "systemctl start sshd && chown -R ansible:ansible /home/ansible/.ssh/authorized_keys"
+
+sudo docker compose exec -T -u ansible virtual1 /bin/bash -c "./start.sh"
+sudo docker compose exec -T -u ansible virtual2 /bin/bash -c "./start.sh"
+sudo docker compose exec -T -u ansible virtualdmz1 /bin/bash -c "./start.sh"
+sudo docker compose exec -T -u ansible routeur /bin/bash -c "./start.sh"
