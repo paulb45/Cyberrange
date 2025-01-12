@@ -19,7 +19,7 @@ RUN rm -f /lib/systemd/system/multi-user.target.wants/* \
 
 RUN systemctl set-default multi-user.target
 
-RUN useradd -m -s /bin/bash ansible 
+RUN useradd -m -s /bin/bash -G sudo ansible 
 RUN echo 'ansible:ansible' | chpasswd
 RUN echo "ansible ALL = (root) NOPASSWD:ALL" > /etc/sudoers.d/ansible
 
