@@ -59,6 +59,9 @@
           #ip route add 10.0.3.0/24 dev eth1
           #ip route add 10.1.0.0/16 dev eth2
 
+          # allow ssh for ansible
+          sudo iptables -A INPUT -i eth2 -p tcp --dport 22 -j ACCEPT
+
           ## Definir la route par defaut
           #ip route add default dev eth0
           # Add any commands you want to run here
