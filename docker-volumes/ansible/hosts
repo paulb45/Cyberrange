@@ -17,6 +17,9 @@ all:
             virtual2:
               ansible_host: 10.1.1.11
               hostname: virtual2
+            virtual3:
+              ansible_host: 10.1.1.12
+              hostname: virtual3
         dmz:
           hosts:
             virtualdmz1:

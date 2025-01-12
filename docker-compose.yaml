@@ -162,3 +162,21 @@ services:
       ansible:
         condition: service_healthy
 
+  virtual3:
+    build: ./docker-images/debian-serveur
+    hostname: virtual3
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    privileged: true
+    networks:
+      vlan_ansible:
+        ipv4_address: 10.1.1.12
+      vlan_serveurs:
+        ipv4_address: 10.0.1.12
+    volumes:
+      - ./docker-volumes/tmp:/tmp/ssh
+      - ./docker-volumes/rsysog:/rsyslog
+    depends_on:
+      ansible:
+        condition: service_healthy
