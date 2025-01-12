@@ -1,12 +1,36 @@
-- name: Création des utilisateurs généraux
+- name: Creation des utilisateurs generaux
   hosts: serveurs, clients
   become: true
 
   tasks:
-  - name: Création de l'utilisateur admin
+  - name: Creation de l'utilisateur admin
     user:
       name: admin
+      shell: /bin/bash
       state: present
       groups: sudo
       append: yes
       password: "{{ 'admin' | password_hash('sha512') }}"
+
+- name: Creation des utilisateurs standards sur les clients
+  hosts: clients
+  become: true
+
+  tasks:
+  - name: Creation de l'utilisateur Alice
+    user:
+      name: alice
+      shell: /bin/bash
+      create_home: yes
+      state: present
+      password: "{{ 'alice' | password_hash('sha512') }}"
+
+  - name: Creation de l'utilisateur Bob
+    user:
+      name: bob
+      shell: /bin/bash
+      create_home: yes
+      state: present
+      password: "{{ 'bob' | password_hash('sha512') }}"
+
+

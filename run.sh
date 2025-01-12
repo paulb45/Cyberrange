@@ -14,3 +14,8 @@ sudo docker compose exec -T -u ansible virtualdmz1 /bin/bash -c "./start.sh"
 sudo docker compose exec -T -u ansible routeur /bin/bash -c "./start.sh"
 sudo docker compose exec -T -u ansible pc1 /bin/bash -c "./start.sh"
 sudo docker compose exec -T -u ansible pc2 /bin/bash -c "./start.sh"
+
+
+# AUTOMATISATION POUR ANSIBLE
+sudo docker compose exec -T -u ansible ansible /bin/sh -c "cd /home/ansible/ansible/ && \
+	ansible-playbook users.yaml"
