@@ -1,0 +1,43 @@
+- name: Install and configure SMB server on virtual2
+  hosts: virtual2
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Install Samba and related utilities
+      apt:
+        name:
+          - samba
+          - smbclient
+          - cifs-utils
+        state: present
+        update_cache: yes
+
+    - name: Ensure the Samba service is started and enabled
+      service:
+        name: smbd
+        state: started
+        enabled: yes
+
+    - name: Configure Samba share
+      blockinfile:
+        path: /etc/samba/smb.conf
+        marker: "# {mark} ANSIBLE MANAGED BLOCK"
+        block: |
+          [shared]
+          path = /srv/samba/shared
+          read only = no
+          guest ok = yes
+          force user = nobody
+          create mask = 0777
+          directory mask = 0777
+
+    - name: Create shared directory
+      file:
+        path: /srv/samba/shared
+        state: directory
+        mode: '0777'
+
+    - name: Restart Samba service to apply changes
+      service:
+        name: smbd
+        state: restarted

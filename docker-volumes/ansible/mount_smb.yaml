@@ -1,0 +1,12 @@
+- name: Mount Samba share from virtual2 on pc1
+  hosts: clients
+  become: true
+  tasks:
+    - name: Create mount point directory
+      file:
+        path: /mnt/shared
+        state: directory
+        mode: '0777'
+
+    - name: Mount SMB share
+      command: mount -t cifs //10.0.1.11/shared /mnt/shared -o username=guest,password=''
