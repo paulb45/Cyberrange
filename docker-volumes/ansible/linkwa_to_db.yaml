@@ -1,0 +1,32 @@
+- name: Update DB configuration in config.inc.php
+  hosts: dmz
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Update DB_SERVER in config.inc.php
+      lineinfile:
+        path: /var/www/html/DVWA/config/config.inc.php
+        regexp: "^\\$_DVWA\\[\\s*'db_server'\\s*\\]\\s*="
+        line: "$_DVWA['db_server'] = getenv('DB_SERVER') ?: '10.0.1.10';"
+        backrefs: yes
+
+    - name: Update DB_DATABASE in config.inc.php
+      lineinfile:
+        path: /var/www/html/DVWA/config/config.inc.php
+        regexp: "^\\$_DVWA\\[\\s*'db_database'\\s*\\]\\s*="
+        line: "$_DVWA['db_database'] = getenv('DB_DATABASE') ?: 'dvwa_db';"
+        backrefs: yes
+
+    - name: Update DB_USER in config.inc.php
+      lineinfile:
+        path: /var/www/html/DVWA/config/config.inc.php
+        regexp: "^\\$_DVWA\\[\\s*'db_user'\\s*\\]\\s*="
+        line: "$_DVWA['db_user'] = getenv('DB_USER') ?: 'dvwa';"
+        backrefs: yes
+
+    - name: Update DB_PASSWORD in config.inc.php
+      lineinfile:
+        path: /var/www/html/DVWA/config/config.inc.php
+        regexp: "^\\$_DVWA\\[\\s*'db_password'\\s*\\]\\s*="
+        line: "$_DVWA['db_password'] = getenv('DB_PASSWORD') ?: 'azerty';"
+        backrefs: yes
