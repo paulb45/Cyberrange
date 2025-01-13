@@ -43,41 +43,27 @@
         dest: /var/www/html/DVWA/config/config.inc.php
         remote_src: yes
 
-- name: Update DVWA config for remote database
+- name: Update config.inc.php for DVWA database connection
   hosts: dmz
   become: true
   become_method: sudo
   tasks:
-    - name: Update DVWA config for remote database
-      lineinfile:
-        path: /var/www/html/DVWA/config/config.inc.php
-        regexp: "^(\\$DB_HOST\\s*=).*;"
-        line: "\\1 '10.0.1.10';"
-        backrefs: yes
-      notify: Restart Apache
+    - name: Update DB_SERVER in config.inc.php
+      command: >
+        sed -i "s/$_DVWA\[\s*\'db_server\'\s*\]\s*=\s*\'[^\']*\'/$_DVWA[\'db_server\'] = getenv(\'DB_SERVER\') ?: \'10.0.1.10\';/" /var/www/html/DVWA/config/config.inc.php
 
-    - name: Update DVWA config for database name
-      lineinfile:
-        path: /var/www/html/DVWA/config/config.inc.php
-        regexp: "^(\\$DB_DATABASE\\s*=).*;"
-        line: "\\1 'dvwa_db';"
-        backrefs: yes
+    - name: Update DB_DATABASE in config.inc.php
+      command: >
+        sed -i "s/$_DVWA\[\s*\'db_database\'\s*\]\s*=\s*\'[^\']*\'/$_DVWA[\'db_database\'] = getenv(\'DB_DATABASE\') ?: \'dvwa_db\';/" /var/www/html/DVWA/config/config.inc.php
 
-    - name: Update DVWA config for database user
-      lineinfile:
-        path: /var/www/html/DVWA/config/config.inc.php
-        regexp: "^(\\$DB_USER\\s*=).*;"
-        line: "\\1 'dvwa';"
-        backrefs: yes
+    - name: Update DB_USER in config.inc.php
+      command: >
+        sed -i "s/$_DVWA\[\s*\'db_user\'\s*\]\s*=\s*\'[^\']*\'/$_DVWA[\'db_user\'] = getenv(\'DB_USER\') ?: \'dvwa\';/" /var/www/html/DVWA/config/config.inc.php
 
-    - name: Update DVWA config for database password
-      lineinfile:
-        path: /var/www/html/DVWA/config/config.inc.php
-        regexp: "^(\\$DB_PASSWORD\\s*=).*;"
-        line: "\\1 'azerty';"
-        backrefs: yes
+    - name: Update DB_PASSWORD in config.inc.php
+      command: >
+        sed -i "s/$_DVWA\[\s*\'db_password\'\s*\]\s*=\s*\'[^\']*\'/$_DVWA[\'db_password\'] = getenv(\'DB_PASSWORD\') ?: \'azerty\';/" /var/www/html/DVWA/config/config.inc.php
 
-  handlers:
     - name: Restart Apache
       service:
         name: apache2
