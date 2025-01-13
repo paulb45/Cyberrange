@@ -1,0 +1,39 @@
+2025-01-13T00:10:08+00:00 pc2 systemd[1]: Listening on syslog.socket - Syslog Socket.
+2025-01-13T00:10:08+00:00 pc2 systemd[1]: Starting rsyslog.service - System Logging Service...
+2025-01-13T00:10:08+00:00 pc2 systemd[1]: Started rsyslog.service - System Logging Service.
+2025-01-13T00:10:08+00:00 pc2 rsyslogd: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2302.0]
+2025-01-13T00:10:08+00:00 pc2 rsyslogd: [origin software="rsyslogd" swVersion="8.2302.0" x-pid="801" x-info="https://www.rsyslog.com"] start
+2025-01-13T00:10:08+00:00 pc2 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:10:08+00:00 pc2 sshd[61]: syslogin_perform_logout: logout() returned an error
+2025-01-13T00:11:08+00:00 pc2 sshd[67]: Received disconnect from 10.1.255.254 port 45914:11: disconnected by user
+2025-01-13T00:11:08+00:00 pc2 sshd[67]: Disconnected from user ansible 10.1.255.254 port 45914
+2025-01-13T00:11:08+00:00 pc2 sshd[61]: pam_unix(sshd:session): session closed for user ansible
+2025-01-13T00:22:49+00:00 pc2 systemd[1]: Starting systemd-tmpfiles-clean.service - Cleanup of Temporary Directories...
+2025-01-13T00:22:49+00:00 pc2 systemd[1]: systemd-tmpfiles-clean.service: Deactivated successfully.
+2025-01-13T00:22:49+00:00 pc2 systemd[1]: Finished systemd-tmpfiles-clean.service - Cleanup of Temporary Directories.
+2025-01-13T00:55:08+00:00 pc2 systemd[1]: Received SIGTERM.
+2025-01-13T00:55:08+00:00 pc2 systemd[1]: Reexecuting.
+2025-01-13T00:59:01+00:00 pc2 systemd[1]: Listening on syslog.socket - Syslog Socket.
+2025-01-13T00:59:01+00:00 pc2 systemd[1]: Starting rsyslog.service - System Logging Service...
+2025-01-13T00:59:01+00:00 pc2 systemd[1]: Started rsyslog.service - System Logging Service.
+2025-01-13T00:59:01+00:00 pc2 rsyslogd: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2302.0]
+2025-01-13T00:59:01+00:00 pc2 rsyslogd: [origin software="rsyslogd" swVersion="8.2302.0" x-pid="814" x-info="https://www.rsyslog.com"] start
+2025-01-13T00:59:01+00:00 pc2 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:59:01+00:00 pc2 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:00:00+00:00 pc2 sshd[63]: Received disconnect from 10.1.255.254 port 38268:11: disconnected by user
+2025-01-13T01:00:00+00:00 pc2 sshd[63]: Disconnected from user ansible 10.1.255.254 port 38268
+2025-01-13T01:00:00+00:00 pc2 sshd[57]: pam_unix(sshd:session): session closed for user ansible
+2025-01-13T01:05:15+00:00 pc2 systemd[1]: Received SIGTERM.
+2025-01-13T01:05:15+00:00 pc2 systemd[1]: Reexecuting.
+2025-01-13T01:20:35+00:00 pc2 systemd[1]: Listening on syslog.socket - Syslog Socket.
+2025-01-13T01:20:35+00:00 pc2 systemd[1]: Starting rsyslog.service - System Logging Service...
+2025-01-13T01:20:35+00:00 pc2 rsyslogd: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2302.0]
+2025-01-13T01:20:35+00:00 pc2 rsyslogd: [origin software="rsyslogd" swVersion="8.2302.0" x-pid="815" x-info="https://www.rsyslog.com"] start
+2025-01-13T01:20:35+00:00 pc2 systemd[1]: Started rsyslog.service - System Logging Service.
+2025-01-13T01:20:36+00:00 pc2 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:20:36+00:00 pc2 sshd[58]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:21:35+00:00 pc2 sshd[64]: Received disconnect from 10.1.255.254 port 49436:11: disconnected by user
+2025-01-13T01:21:35+00:00 pc2 sshd[64]: Disconnected from user ansible 10.1.255.254 port 49436
+2025-01-13T01:21:35+00:00 pc2 sshd[58]: pam_unix(sshd:session): session closed for user ansible
+2025-01-13T01:24:08+00:00 pc2 systemd[1]: Received SIGTERM.
+2025-01-13T01:24:08+00:00 pc2 systemd[1]: Reexecuting.

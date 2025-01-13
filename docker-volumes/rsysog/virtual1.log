@@ -1,0 +1,505 @@
+2025-01-13T00:10:08+00:00 virtual1 systemd[1]: Listening on syslog.socket - Syslog Socket.
+2025-01-13T00:10:08+00:00 virtual1 systemd[1]: Starting rsyslog.service - System Logging Service...
+2025-01-13T00:10:08+00:00 virtual1 rsyslogd: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2302.0]
+2025-01-13T00:10:08+00:00 virtual1 systemd[1]: Started rsyslog.service - System Logging Service.
+2025-01-13T00:10:08+00:00 virtual1 rsyslogd: [origin software="rsyslogd" swVersion="8.2302.0" x-pid="692" x-info="https://www.rsyslog.com"] start
+2025-01-13T00:10:08+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:10:08+00:00 virtual1 sshd[61]: syslogin_perform_logout: logout() returned an error
+2025-01-13T00:11:08+00:00 virtual1 sshd[67]: Received disconnect from 10.1.255.254 port 33232:11: disconnected by user
+2025-01-13T00:11:08+00:00 virtual1 sshd[67]: Disconnected from user ansible 10.1.255.254 port 33232
+2025-01-13T00:11:08+00:00 virtual1 sshd[61]: pam_unix(sshd:session): session closed for user ansible
+2025-01-13T00:13:42+00:00 virtual1 sshd[702]: Accepted publickey for ansible from 10.1.255.254 port 40612 ssh2: ED25519 SHA256:B9AHjPOvIiD4Ai2bcT+iTilcJ1XaDwFHfxRK0USvqWo
+2025-01-13T00:13:42+00:00 virtual1 sshd[702]: pam_unix(sshd:session): session opened for user ansible(uid=1000) by (uid=0)
+2025-01-13T00:13:42+00:00 virtual1 systemd[1]: Created slice user-1000.slice - User Slice of UID 1000.
+2025-01-13T00:13:42+00:00 virtual1 systemd[1]: Starting user-runtime-dir@1000.service - User Runtime Directory /run/user/1000...
+2025-01-13T00:13:42+00:00 virtual1 systemd-logind[419]: New session 11 of user ansible.
+2025-01-13T00:13:42+00:00 virtual1 systemd[1]: Finished user-runtime-dir@1000.service - User Runtime Directory /run/user/1000.
+2025-01-13T00:13:42+00:00 virtual1 systemd[1]: Starting user@1000.service - User Manager for UID 1000...
+2025-01-13T00:13:42+00:00 virtual1 (systemd): pam_unix(systemd-user:session): session opened for user ansible(uid=1000) by (uid=0)
+2025-01-13T00:13:42+00:00 virtual1 systemd[705]: Queued start job for default target default.target.
+2025-01-13T00:13:42+00:00 virtual1 systemd[705]: Created slice app.slice - User Application Slice.
+2025-01-13T00:13:42+00:00 virtual1 systemd[705]: Reached target paths.target - Paths.
+2025-01-13T00:13:42+00:00 virtual1 systemd[705]: Reached target timers.target - Timers.
+2025-01-13T00:13:42+00:00 virtual1 systemd[705]: Starting dbus.socket - D-Bus User Message Bus Socket...
+2025-01-13T00:13:42+00:00 virtual1 systemd[705]: Listening on dbus.socket - D-Bus User Message Bus Socket.
+2025-01-13T00:13:42+00:00 virtual1 systemd[705]: Reached target sockets.target - Sockets.
+2025-01-13T00:13:42+00:00 virtual1 systemd[705]: Reached target basic.target - Basic System.
+2025-01-13T00:13:42+00:00 virtual1 systemd[705]: Reached target default.target - Main User Target.
+2025-01-13T00:13:42+00:00 virtual1 systemd[1]: Started user@1000.service - User Manager for UID 1000.
+2025-01-13T00:13:42+00:00 virtual1 systemd[705]: Startup finished in 131ms.
+2025-01-13T00:13:42+00:00 virtual1 systemd[1]: Started session-11.scope - Session 11 of User ansible.
+2025-01-13T00:13:42+00:00 virtual1 sshd[702]: pam_env(sshd:session): deprecated reading of user environment enabled
+2025-01-13T00:13:42+00:00 virtual1 sshd[702]: pam_env(sshd:session): Unable to open env file: /etc/default/locale: No such file or directory
+2025-01-13T00:13:43+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-cxweftspggufbmmzcozxcrwabitqgzau ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736727222.7847085-1161-36922857018725/AnsiballZ_setup.py'
+2025-01-13T00:13:43+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T00:13:44+00:00 virtual1 ansible-ansible.legacy.setup: Invoked with gather_subset=['all'] gather_timeout=10 filter=[] fact_path=/etc/ansible/facts.d
+2025-01-13T00:13:44+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:13:44+00:00 virtual1 sshd[702]: syslogin_perform_logout: logout() returned an error
+2025-01-13T00:13:45+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-fhiwaiipduxenaoehvttohevfhxnedcj ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736727224.9458566-1182-145268643377935/AnsiballZ_apt.py'
+2025-01-13T00:13:45+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T00:13:45+00:00 virtual1 ansible-apt: Invoked with name=mariadb-server state=present update_cache=True package=['mariadb-server'] update_cache_retries=5 update_cache_retry_max_delay=12 cache_valid_time=0 purge=False force=False upgrade=no dpkg_options=force-confdef,force-confold autoremove=False autoclean=False fail_on_autoremove=False only_upgrade=False force_apt_get=False clean=False allow_unauthenticated=False allow_downgrade=False allow_change_held_packages=False lock_timeout=60 deb=None default_release=None install_recommends=None policy_rc_d=None
+2025-01-13T00:14:02+00:00 virtual1 groupadd[1257]: group added to /etc/group: name=mysql, GID=103
+2025-01-13T00:14:02+00:00 virtual1 groupadd[1257]: group added to /etc/gshadow: name=mysql
+2025-01-13T00:14:02+00:00 virtual1 groupadd[1257]: new group: name=mysql, GID=103
+2025-01-13T00:14:02+00:00 virtual1 useradd[1265]: new user: name=mysql, UID=102, GID=103, home=/nonexistent, shell=/bin/false, from=none
+2025-01-13T00:14:02+00:00 virtual1 chfn[1272]: changed user 'mysql' information
+2025-01-13T00:14:06+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T00:14:06+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T00:14:08+00:00 virtual1 mariadb-server.postinst[1689]: 2025-01-13  0:14:08 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+2025-01-13T00:14:10+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T00:14:10+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T00:14:11+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T00:14:12+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T00:14:13+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:14:13+00:00 virtual1 sshd[702]: syslogin_perform_logout: logout() returned an error
+2025-01-13T00:14:14+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-bdsjrxcdozslamhmvahoqnsnouowutnr ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736727254.0216165-1220-20409789133525/AnsiballZ_apt.py'
+2025-01-13T00:14:14+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T00:14:14+00:00 virtual1 ansible-apt: Invoked with name=python3-pymysql state=present update_cache=True package=['python3-pymysql'] update_cache_retries=5 update_cache_retry_max_delay=12 cache_valid_time=0 purge=False force=False upgrade=no dpkg_options=force-confdef,force-confold autoremove=False autoclean=False fail_on_autoremove=False only_upgrade=False force_apt_get=False clean=False allow_unauthenticated=False allow_downgrade=False allow_change_held_packages=False lock_timeout=60 deb=None default_release=None install_recommends=None policy_rc_d=None
+2025-01-13T00:14:23+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:14:23+00:00 virtual1 sshd[702]: syslogin_perform_logout: logout() returned an error
+2025-01-13T00:14:24+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-hroisunoeetsvviwssoqngnendpgiiix ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736727263.8759801-1240-54460758741545/AnsiballZ_systemd.py'
+2025-01-13T00:14:24+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T00:14:25+00:00 virtual1 ansible-ansible.legacy.systemd: Invoked with name=mariadb state=started enabled=True daemon_reload=False daemon_reexec=False scope=system no_block=False force=None masked=None
+2025-01-13T00:14:25+00:00 virtual1 systemd[1]: Starting mariadb.service - MariaDB 10.11.6 database server...
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] Starting MariaDB 10.11.6-MariaDB-0+deb12u1 source revision  as process 2096
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: Compressed tables use zlib 1.2.13
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: Number of transaction pools: 1
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: Using liburing
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: Completed initialization of buffer pool
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: Buffered log writes (block size=512 bytes)
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: End of log at LSN=45614
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: 128 rollback segments are active.
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: log sequence number 45614; transaction id 14
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] Plugin 'FEEDBACK' is disabled.
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] Server socket created on IP: '127.0.0.1'.
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] /usr/sbin/mariadbd: ready for connections.
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: Version: '10.11.6-MariaDB-0+deb12u1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Debian 12
+2025-01-13T00:14:25+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:14:25 0 [Note] InnoDB: Buffer pool(s) load completed at 250113  0:14:25
+2025-01-13T00:14:26+00:00 virtual1 systemd[1]: Started mariadb.service - MariaDB 10.11.6 database server.
+2025-01-13T00:14:26+00:00 virtual1 /etc/mysql/debian-start[2112]: Upgrading MySQL tables if necessary.
+2025-01-13T00:14:26+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:14:26+00:00 virtual1 sshd[702]: syslogin_perform_logout: logout() returned an error
+2025-01-13T00:14:26+00:00 virtual1 /etc/mysql/debian-start[2133]: Checking for insecure root accounts.
+2025-01-13T00:14:26+00:00 virtual1 /etc/mysql/debian-start[2141]: Triggering myisam-recover for all MyISAM tables and aria-recover for all Aria tables
+2025-01-13T00:14:26+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-bnquulyqddzugpdtgdcengfixdadzzqf ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736727266.2428944-1254-14527254453966/AnsiballZ_command.py'
+2025-01-13T00:14:26+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T00:14:26+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "CREATE DATABASE dvwa_db;" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T00:14:27+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:14:27+00:00 virtual1 sshd[702]: syslogin_perform_logout: logout() returned an error
+2025-01-13T00:14:27+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-waykceiwubkzzpnyqhdwjclfsudjqnvj ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736727267.173425-1262-213772738498690/AnsiballZ_command.py'
+2025-01-13T00:14:27+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T00:14:27+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "CREATE USER 'dvwa'@'localhost' IDENTIFIED BY 'azerty';" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T00:14:27+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:14:27+00:00 virtual1 sshd[702]: syslogin_perform_logout: logout() returned an error
+2025-01-13T00:14:27+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-lfagmrxrbncosfbvmvenfuahvooajtps ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736727267.8275247-1270-40937748934336/AnsiballZ_command.py'
+2025-01-13T00:14:27+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T00:14:28+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "GRANT ALL PRIVILEGES ON dvwa_db.* TO 'dvwa'@'10.1.3.10' IDENTIFIED BY 'azerty';" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T00:14:28+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:14:28+00:00 virtual1 sshd[702]: syslogin_perform_logout: logout() returned an error
+2025-01-13T00:14:28+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-apqglojosbznbwbstgqndcqdkepzjzcs ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736727268.5138862-1278-99017296433712/AnsiballZ_command.py'
+2025-01-13T00:14:28+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T00:14:29+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "FLUSH PRIVILEGES" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T00:14:29+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:14:29+00:00 virtual1 sshd[702]: syslogin_perform_logout: logout() returned an error
+2025-01-13T00:15:28+00:00 virtual1 sshd[716]: Received disconnect from 10.1.255.254 port 40612:11: disconnected by user
+2025-01-13T00:15:28+00:00 virtual1 sshd[716]: Disconnected from user ansible 10.1.255.254 port 40612
+2025-01-13T00:15:28+00:00 virtual1 sshd[702]: pam_unix(sshd:session): session closed for user ansible
+2025-01-13T00:15:28+00:00 virtual1 systemd[1]: session-11.scope: Deactivated successfully.
+2025-01-13T00:15:28+00:00 virtual1 systemd[1]: session-11.scope: Consumed 34.053s CPU time.
+2025-01-13T00:15:28+00:00 virtual1 systemd-logind[419]: Session 11 logged out. Waiting for processes to exit.
+2025-01-13T00:15:28+00:00 virtual1 systemd-logind[419]: Removed session 11.
+2025-01-13T00:15:38+00:00 virtual1 systemd[1]: Stopping user@1000.service - User Manager for UID 1000...
+2025-01-13T00:15:38+00:00 virtual1 systemd[705]: Activating special unit exit.target...
+2025-01-13T00:15:38+00:00 virtual1 systemd[705]: Stopped target default.target - Main User Target.
+2025-01-13T00:15:38+00:00 virtual1 systemd[705]: Stopped target basic.target - Basic System.
+2025-01-13T00:15:38+00:00 virtual1 systemd[705]: Stopped target paths.target - Paths.
+2025-01-13T00:15:38+00:00 virtual1 systemd[705]: Stopped target sockets.target - Sockets.
+2025-01-13T00:15:38+00:00 virtual1 systemd[705]: Stopped target timers.target - Timers.
+2025-01-13T00:15:38+00:00 virtual1 systemd[705]: Closed dbus.socket - D-Bus User Message Bus Socket.
+2025-01-13T00:15:38+00:00 virtual1 systemd[705]: Removed slice app.slice - User Application Slice.
+2025-01-13T00:15:38+00:00 virtual1 systemd[705]: Reached target shutdown.target - Shutdown.
+2025-01-13T00:15:38+00:00 virtual1 systemd[705]: Finished systemd-exit.service - Exit the Session.
+2025-01-13T00:15:38+00:00 virtual1 systemd[705]: Reached target exit.target - Exit the Session.
+2025-01-13T00:15:38+00:00 virtual1 systemd[1]: user@1000.service: Deactivated successfully.
+2025-01-13T00:15:38+00:00 virtual1 systemd[1]: Stopped user@1000.service - User Manager for UID 1000.
+2025-01-13T00:15:38+00:00 virtual1 systemd[1]: Stopping user-runtime-dir@1000.service - User Runtime Directory /run/user/1000...
+2025-01-13T00:15:38+00:00 virtual1 systemd[1]: run-user-1000.mount: Deactivated successfully.
+2025-01-13T00:15:38+00:00 virtual1 systemd[1]: user-runtime-dir@1000.service: Deactivated successfully.
+2025-01-13T00:15:38+00:00 virtual1 systemd[1]: Stopped user-runtime-dir@1000.service - User Runtime Directory /run/user/1000.
+2025-01-13T00:15:38+00:00 virtual1 systemd[1]: Removed slice user-1000.slice - User Slice of UID 1000.
+2025-01-13T00:15:38+00:00 virtual1 systemd[1]: user-1000.slice: Consumed 34.192s CPU time.
+2025-01-13T00:22:49+00:00 virtual1 systemd[1]: Starting systemd-tmpfiles-clean.service - Cleanup of Temporary Directories...
+2025-01-13T00:22:49+00:00 virtual1 systemd[1]: systemd-tmpfiles-clean.service: Deactivated successfully.
+2025-01-13T00:22:49+00:00 virtual1 systemd[1]: Finished systemd-tmpfiles-clean.service - Cleanup of Temporary Directories.
+2025-01-13T00:27:59+00:00 virtual1 systemd[1]: Stopping mariadb.service - MariaDB 10.11.6 database server...
+2025-01-13T00:27:59+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:27:59 0 [Note] /usr/sbin/mariadbd (initiated by: unknown): Normal shutdown
+2025-01-13T00:27:59+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:27:59 0 [Note] InnoDB: FTS optimize thread exiting.
+2025-01-13T00:27:59+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:27:59 0 [Note] InnoDB: Starting shutdown...
+2025-01-13T00:27:59+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:27:59 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+2025-01-13T00:27:59+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:27:59 0 [Note] InnoDB: Buffer pool(s) dump completed at 250113  0:27:59
+2025-01-13T00:27:59+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:27:59 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+2025-01-13T00:27:59+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:27:59 0 [Note] InnoDB: Shutdown completed; log sequence number 47204; transaction id 15
+2025-01-13T00:27:59+00:00 virtual1 mariadbd[2096]: 2025-01-13  0:27:59 0 [Note] /usr/sbin/mariadbd: Shutdown complete
+2025-01-13T00:27:59+00:00 virtual1 systemd[1]: mariadb.service: Deactivated successfully.
+2025-01-13T00:27:59+00:00 virtual1 systemd[1]: Stopped mariadb.service - MariaDB 10.11.6 database server.
+2025-01-13T00:27:59+00:00 virtual1 systemd[1]: mariadb.service: Consumed 1.551s CPU time.
+2025-01-13T00:27:59+00:00 virtual1 systemd[1]: Starting mariadb.service - MariaDB 10.11.6 database server...
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] Starting MariaDB 10.11.6-MariaDB-0+deb12u1 source revision  as process 2345
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: Compressed tables use zlib 1.2.13
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: Number of transaction pools: 1
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: Using liburing
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: Completed initialization of buffer pool
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: Buffered log writes (block size=512 bytes)
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: End of log at LSN=47204
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: 128 rollback segments are active.
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: log sequence number 47204; transaction id 16
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] Plugin 'FEEDBACK' is disabled.
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] Server socket created on IP: '0.0.0.0'.
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] InnoDB: Buffer pool(s) load completed at 250113  0:28:00
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: 2025-01-13  0:28:00 0 [Note] /usr/sbin/mariadbd: ready for connections.
+2025-01-13T00:28:00+00:00 virtual1 mariadbd[2345]: Version: '10.11.6-MariaDB-0+deb12u1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Debian 12
+2025-01-13T00:28:00+00:00 virtual1 systemd[1]: Started mariadb.service - MariaDB 10.11.6 database server.
+2025-01-13T00:28:00+00:00 virtual1 /etc/mysql/debian-start[2360]: Upgrading MySQL tables if necessary.
+2025-01-13T00:28:00+00:00 virtual1 /etc/mysql/debian-start[2371]: Checking for insecure root accounts.
+2025-01-13T00:28:00+00:00 virtual1 /etc/mysql/debian-start[2375]: Triggering myisam-recover for all MyISAM tables and aria-recover for all Aria tables
+2025-01-13T00:55:08+00:00 virtual1 systemd[1]: Received SIGTERM.
+2025-01-13T00:55:09+00:00 virtual1 systemd[1]: Reexecuting.
+2025-01-13T00:59:01+00:00 virtual1 systemd[1]: Listening on syslog.socket - Syslog Socket.
+2025-01-13T00:59:01+00:00 virtual1 systemd[1]: Starting rsyslog.service - System Logging Service...
+2025-01-13T00:59:01+00:00 virtual1 rsyslogd: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2302.0]
+2025-01-13T00:59:01+00:00 virtual1 rsyslogd: [origin software="rsyslogd" swVersion="8.2302.0" x-pid="706" x-info="https://www.rsyslog.com"] start
+2025-01-13T00:59:01+00:00 virtual1 systemd[1]: Started rsyslog.service - System Logging Service.
+2025-01-13T00:59:01+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T00:59:01+00:00 virtual1 sshd[56]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:00:01+00:00 virtual1 sshd[62]: Received disconnect from 10.1.255.254 port 59558:11: disconnected by user
+2025-01-13T01:00:01+00:00 virtual1 sshd[62]: Disconnected from user ansible 10.1.255.254 port 59558
+2025-01-13T01:00:01+00:00 virtual1 sshd[56]: pam_unix(sshd:session): session closed for user ansible
+2025-01-13T01:00:42+00:00 virtual1 sshd[714]: Accepted publickey for ansible from 10.1.255.254 port 42424 ssh2: ED25519 SHA256:ZoFDnATA8kk8im/LXJ6IZRExSGFYmWOQ7CoCR9fWFQ0
+2025-01-13T01:00:42+00:00 virtual1 sshd[714]: pam_unix(sshd:session): session opened for user ansible(uid=1000) by (uid=0)
+2025-01-13T01:00:43+00:00 virtual1 systemd-logind[433]: New session 23 of user ansible.
+2025-01-13T01:00:43+00:00 virtual1 systemd[1]: Created slice user-1000.slice - User Slice of UID 1000.
+2025-01-13T01:00:43+00:00 virtual1 systemd[1]: Starting user-runtime-dir@1000.service - User Runtime Directory /run/user/1000...
+2025-01-13T01:00:43+00:00 virtual1 systemd[1]: Finished user-runtime-dir@1000.service - User Runtime Directory /run/user/1000.
+2025-01-13T01:00:43+00:00 virtual1 systemd[1]: Starting user@1000.service - User Manager for UID 1000...
+2025-01-13T01:00:43+00:00 virtual1 (systemd): pam_unix(systemd-user:session): session opened for user ansible(uid=1000) by (uid=0)
+2025-01-13T01:00:43+00:00 virtual1 systemd[717]: Queued start job for default target default.target.
+2025-01-13T01:00:43+00:00 virtual1 systemd[717]: Created slice app.slice - User Application Slice.
+2025-01-13T01:00:43+00:00 virtual1 systemd[717]: Reached target paths.target - Paths.
+2025-01-13T01:00:43+00:00 virtual1 systemd[717]: Reached target timers.target - Timers.
+2025-01-13T01:00:43+00:00 virtual1 systemd[717]: Starting dbus.socket - D-Bus User Message Bus Socket...
+2025-01-13T01:00:43+00:00 virtual1 systemd[717]: Listening on dbus.socket - D-Bus User Message Bus Socket.
+2025-01-13T01:00:43+00:00 virtual1 systemd[717]: Reached target sockets.target - Sockets.
+2025-01-13T01:00:43+00:00 virtual1 systemd[717]: Reached target basic.target - Basic System.
+2025-01-13T01:00:43+00:00 virtual1 systemd[717]: Reached target default.target - Main User Target.
+2025-01-13T01:00:43+00:00 virtual1 systemd[717]: Startup finished in 132ms.
+2025-01-13T01:00:43+00:00 virtual1 systemd[1]: Started user@1000.service - User Manager for UID 1000.
+2025-01-13T01:00:43+00:00 virtual1 systemd[1]: Started session-23.scope - Session 23 of User ansible.
+2025-01-13T01:00:43+00:00 virtual1 sshd[714]: pam_env(sshd:session): deprecated reading of user environment enabled
+2025-01-13T01:00:43+00:00 virtual1 sshd[714]: pam_env(sshd:session): Unable to open env file: /etc/default/locale: No such file or directory
+2025-01-13T01:00:44+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-gwclvexuunldpqjqhbhzoauqbzzharqd ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736730043.3738458-1135-24369612474621/AnsiballZ_setup.py'
+2025-01-13T01:00:44+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:00:44+00:00 virtual1 ansible-ansible.legacy.setup: Invoked with gather_subset=['all'] gather_timeout=10 filter=[] fact_path=/etc/ansible/facts.d
+2025-01-13T01:00:45+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:00:45+00:00 virtual1 sshd[714]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:00:46+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-mzydknipvudjyyfvowzavzulisobuxyg ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736730045.6183925-1150-39312280694734/AnsiballZ_apt.py'
+2025-01-13T01:00:46+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:00:46+00:00 virtual1 ansible-apt: Invoked with name=mariadb-server state=present update_cache=True package=['mariadb-server'] update_cache_retries=5 update_cache_retry_max_delay=12 cache_valid_time=0 purge=False force=False upgrade=no dpkg_options=force-confdef,force-confold autoremove=False autoclean=False fail_on_autoremove=False only_upgrade=False force_apt_get=False clean=False allow_unauthenticated=False allow_downgrade=False allow_change_held_packages=False lock_timeout=60 deb=None default_release=None install_recommends=None policy_rc_d=None
+2025-01-13T01:01:01+00:00 virtual1 groupadd[1269]: group added to /etc/group: name=mysql, GID=103
+2025-01-13T01:01:01+00:00 virtual1 groupadd[1269]: group added to /etc/gshadow: name=mysql
+2025-01-13T01:01:01+00:00 virtual1 groupadd[1269]: new group: name=mysql, GID=103
+2025-01-13T01:01:01+00:00 virtual1 useradd[1277]: new user: name=mysql, UID=102, GID=103, home=/nonexistent, shell=/bin/false, from=none
+2025-01-13T01:01:01+00:00 virtual1 chfn[1284]: changed user 'mysql' information
+2025-01-13T01:01:04+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:01:05+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:01:06+00:00 virtual1 mariadb-server.postinst[1701]: 2025-01-13  1:01:06 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+2025-01-13T01:01:08+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:01:09+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:01:09+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:01:10+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:01:12+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:01:13+00:00 virtual1 sshd[714]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:01:13+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-bbdnfnetepyxfvfwzyidtrnvhvvtnnlv ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736730072.3219361-1189-270172105797511/AnsiballZ_apt.py'
+2025-01-13T01:01:13+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:01:13+00:00 virtual1 ansible-apt: Invoked with name=python3-pymysql state=present update_cache=True package=['python3-pymysql'] update_cache_retries=5 update_cache_retry_max_delay=12 cache_valid_time=0 purge=False force=False upgrade=no dpkg_options=force-confdef,force-confold autoremove=False autoclean=False fail_on_autoremove=False only_upgrade=False force_apt_get=False clean=False allow_unauthenticated=False allow_downgrade=False allow_change_held_packages=False lock_timeout=60 deb=None default_release=None install_recommends=None policy_rc_d=None
+2025-01-13T01:01:22+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:01:22+00:00 virtual1 sshd[714]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:01:23+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-lqghkagvaezkjwuahrfjntvgrluaspcs ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736730082.2316046-1209-219824902135457/AnsiballZ_systemd.py'
+2025-01-13T01:01:23+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:01:23+00:00 virtual1 ansible-ansible.legacy.systemd: Invoked with name=mariadb state=started enabled=True daemon_reload=False daemon_reexec=False scope=system no_block=False force=None masked=None
+2025-01-13T01:01:23+00:00 virtual1 systemd[1]: Starting mariadb.service - MariaDB 10.11.6 database server...
+2025-01-13T01:01:23+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:23 0 [Note] Starting MariaDB 10.11.6-MariaDB-0+deb12u1 source revision  as process 2112
+2025-01-13T01:01:23+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:23 0 [Note] InnoDB: Compressed tables use zlib 1.2.13
+2025-01-13T01:01:23+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:23 0 [Note] InnoDB: Number of transaction pools: 1
+2025-01-13T01:01:23+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:23 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2025-01-13T01:01:23+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:23 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+2025-01-13T01:01:23+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:23 0 [Note] InnoDB: Using liburing
+2025-01-13T01:01:23+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:23 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2025-01-13T01:01:23+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:23 0 [Note] InnoDB: Completed initialization of buffer pool
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Note] InnoDB: Buffered log writes (block size=512 bytes)
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Note] InnoDB: End of log at LSN=45630
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Note] InnoDB: 128 rollback segments are active.
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Note] InnoDB: log sequence number 45630; transaction id 14
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Note] Plugin 'FEEDBACK' is disabled.
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Note] Server socket created on IP: '127.0.0.1'.
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Note] InnoDB: Buffer pool(s) load completed at 250113  1:01:24
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:24 0 [Note] /usr/sbin/mariadbd: ready for connections.
+2025-01-13T01:01:24+00:00 virtual1 mariadbd[2112]: Version: '10.11.6-MariaDB-0+deb12u1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Debian 12
+2025-01-13T01:01:24+00:00 virtual1 systemd[1]: Started mariadb.service - MariaDB 10.11.6 database server.
+2025-01-13T01:01:24+00:00 virtual1 /etc/mysql/debian-start[2128]: Upgrading MySQL tables if necessary.
+2025-01-13T01:01:24+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:01:24+00:00 virtual1 sshd[714]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:01:24+00:00 virtual1 /etc/mysql/debian-start[2141]: Checking for insecure root accounts.
+2025-01-13T01:01:24+00:00 virtual1 /etc/mysql/debian-start[2147]: Triggering myisam-recover for all MyISAM tables and aria-recover for all Aria tables
+2025-01-13T01:01:24+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-gxqeaywkthgnnpndbehxguuxvutkhrle ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736730084.3632789-1223-244544292866733/AnsiballZ_command.py'
+2025-01-13T01:01:24+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:01:25+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "CREATE DATABASE dvwa_db;" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T01:01:25+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:01:25+00:00 virtual1 sshd[714]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:01:25+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-gwlsdczdeisfhlzysobxmktnsdgjhwcx ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736730085.3642385-1231-180434624508793/AnsiballZ_command.py'
+2025-01-13T01:01:25+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:01:25+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "CREATE USER 'dvwa'@'localhost' IDENTIFIED BY 'azerty';" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T01:01:25+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:01:25+00:00 virtual1 sshd[714]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:01:26+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-oyksyycxugghmicsjgpjihbuzcplgxgz ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736730086.0501983-1239-11781974665047/AnsiballZ_command.py'
+2025-01-13T01:01:26+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:01:26+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "GRANT ALL PRIVILEGES ON dvwa_db.* TO 'dvwa'@'10.1.3.10' IDENTIFIED BY 'azerty';" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T01:01:26+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:01:26+00:00 virtual1 sshd[714]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:01:26+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-qnupyuucdebwuypaqsopjsljyimomyxb ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736730086.746612-1247-247836512138797/AnsiballZ_command.py'
+2025-01-13T01:01:26+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:01:27+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "FLUSH PRIVILEGES" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T01:01:27+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:01:27+00:00 virtual1 sshd[714]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:01:27+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-qchsjvsjelwjvgcmgpioaiedhxbxshst ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736730087.403473-1255-154500451204794/AnsiballZ_lineinfile.py'
+2025-01-13T01:01:27+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:01:28+00:00 virtual1 ansible-lineinfile: Invoked with path=/etc/mysql/mariadb.conf.d/50-server.cnf regexp=^bind-address line=bind-address = 0.0.0.0 state=present backrefs=False create=False backup=False firstmatch=False unsafe_writes=False search_string=None insertafter=None insertbefore=None validate=None mode=None owner=None group=None seuser=None serole=None selevel=None setype=None attributes=None
+2025-01-13T01:01:28+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:01:28+00:00 virtual1 sshd[714]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:01:28+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-zyjlgcjbfxykkgqfvlujmciaowhvylph ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736730088.3090894-1263-35740261410919/AnsiballZ_systemd.py'
+2025-01-13T01:01:28+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:01:29+00:00 virtual1 ansible-ansible.legacy.systemd: Invoked with name=mariadb state=restarted daemon_reload=False daemon_reexec=False scope=system no_block=False enabled=None force=None masked=None
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:29 0 [Note] /usr/sbin/mariadbd (initiated by: unknown): Normal shutdown
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:29 0 [Note] InnoDB: FTS optimize thread exiting.
+2025-01-13T01:01:29+00:00 virtual1 systemd[1]: Stopping mariadb.service - MariaDB 10.11.6 database server...
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:29 0 [Note] InnoDB: Starting shutdown...
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:29 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:29 0 [Note] InnoDB: Buffer pool(s) dump completed at 250113  1:01:29
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:29 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:29 0 [Note] InnoDB: Shutdown completed; log sequence number 47220; transaction id 15
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2112]: 2025-01-13  1:01:29 0 [Note] /usr/sbin/mariadbd: Shutdown complete
+2025-01-13T01:01:29+00:00 virtual1 systemd[1]: mariadb.service: Deactivated successfully.
+2025-01-13T01:01:29+00:00 virtual1 systemd[1]: Stopped mariadb.service - MariaDB 10.11.6 database server.
+2025-01-13T01:01:29+00:00 virtual1 systemd[1]: mariadb.service: Consumed 1.052s CPU time.
+2025-01-13T01:01:29+00:00 virtual1 systemd[1]: Starting mariadb.service - MariaDB 10.11.6 database server...
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] Starting MariaDB 10.11.6-MariaDB-0+deb12u1 source revision  as process 2381
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: Compressed tables use zlib 1.2.13
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: Number of transaction pools: 1
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: Using liburing
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: Completed initialization of buffer pool
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: Buffered log writes (block size=512 bytes)
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: End of log at LSN=47220
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: 128 rollback segments are active.
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: log sequence number 47220; transaction id 16
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] Plugin 'FEEDBACK' is disabled.
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] Server socket created on IP: '0.0.0.0'.
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] InnoDB: Buffer pool(s) load completed at 250113  1:01:29
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: 2025-01-13  1:01:29 0 [Note] /usr/sbin/mariadbd: ready for connections.
+2025-01-13T01:01:29+00:00 virtual1 mariadbd[2381]: Version: '10.11.6-MariaDB-0+deb12u1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Debian 12
+2025-01-13T01:01:29+00:00 virtual1 systemd[1]: Started mariadb.service - MariaDB 10.11.6 database server.
+2025-01-13T01:01:29+00:00 virtual1 /etc/mysql/debian-start[2396]: Upgrading MySQL tables if necessary.
+2025-01-13T01:01:29+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:01:29+00:00 virtual1 sshd[714]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:01:29+00:00 virtual1 /etc/mysql/debian-start[2408]: Checking for insecure root accounts.
+2025-01-13T01:01:30+00:00 virtual1 /etc/mysql/debian-start[2415]: Triggering myisam-recover for all MyISAM tables and aria-recover for all Aria tables
+2025-01-13T01:02:29+00:00 virtual1 sshd[728]: Received disconnect from 10.1.255.254 port 42424:11: disconnected by user
+2025-01-13T01:02:29+00:00 virtual1 sshd[728]: Disconnected from user ansible 10.1.255.254 port 42424
+2025-01-13T01:02:29+00:00 virtual1 sshd[714]: pam_unix(sshd:session): session closed for user ansible
+2025-01-13T01:02:29+00:00 virtual1 systemd[1]: session-23.scope: Deactivated successfully.
+2025-01-13T01:02:29+00:00 virtual1 systemd[1]: session-23.scope: Consumed 35.202s CPU time.
+2025-01-13T01:02:29+00:00 virtual1 systemd-logind[433]: Session 23 logged out. Waiting for processes to exit.
+2025-01-13T01:02:29+00:00 virtual1 systemd-logind[433]: Removed session 23.
+2025-01-13T01:02:39+00:00 virtual1 systemd[1]: Stopping user@1000.service - User Manager for UID 1000...
+2025-01-13T01:02:39+00:00 virtual1 systemd[717]: Activating special unit exit.target...
+2025-01-13T01:02:39+00:00 virtual1 systemd[717]: Stopped target default.target - Main User Target.
+2025-01-13T01:02:39+00:00 virtual1 systemd[717]: Stopped target basic.target - Basic System.
+2025-01-13T01:02:39+00:00 virtual1 systemd[717]: Stopped target paths.target - Paths.
+2025-01-13T01:02:39+00:00 virtual1 systemd[717]: Stopped target sockets.target - Sockets.
+2025-01-13T01:02:39+00:00 virtual1 systemd[717]: Stopped target timers.target - Timers.
+2025-01-13T01:02:39+00:00 virtual1 systemd[717]: Closed dbus.socket - D-Bus User Message Bus Socket.
+2025-01-13T01:02:39+00:00 virtual1 systemd[717]: Removed slice app.slice - User Application Slice.
+2025-01-13T01:02:39+00:00 virtual1 systemd[717]: Reached target shutdown.target - Shutdown.
+2025-01-13T01:02:39+00:00 virtual1 systemd[717]: Finished systemd-exit.service - Exit the Session.
+2025-01-13T01:02:39+00:00 virtual1 systemd[717]: Reached target exit.target - Exit the Session.
+2025-01-13T01:02:39+00:00 virtual1 systemd[1]: user@1000.service: Deactivated successfully.
+2025-01-13T01:02:39+00:00 virtual1 systemd[1]: Stopped user@1000.service - User Manager for UID 1000.
+2025-01-13T01:02:39+00:00 virtual1 systemd[1]: Stopping user-runtime-dir@1000.service - User Runtime Directory /run/user/1000...
+2025-01-13T01:02:39+00:00 virtual1 systemd[1]: run-user-1000.mount: Deactivated successfully.
+2025-01-13T01:02:39+00:00 virtual1 systemd[1]: user-runtime-dir@1000.service: Deactivated successfully.
+2025-01-13T01:02:39+00:00 virtual1 systemd[1]: Stopped user-runtime-dir@1000.service - User Runtime Directory /run/user/1000.
+2025-01-13T01:02:39+00:00 virtual1 systemd[1]: Removed slice user-1000.slice - User Slice of UID 1000.
+2025-01-13T01:02:39+00:00 virtual1 systemd[1]: user-1000.slice: Consumed 35.341s CPU time.
+2025-01-13T01:05:15+00:00 virtual1 systemd[1]: Received SIGTERM.
+2025-01-13T01:05:16+00:00 virtual1 systemd[1]: Reexecuting.
+2025-01-13T01:20:35+00:00 virtual1 systemd[1]: Listening on syslog.socket - Syslog Socket.
+2025-01-13T01:20:35+00:00 virtual1 systemd[1]: Starting rsyslog.service - System Logging Service...
+2025-01-13T01:20:35+00:00 virtual1 systemd[1]: Started rsyslog.service - System Logging Service.
+2025-01-13T01:20:35+00:00 virtual1 rsyslogd: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2302.0]
+2025-01-13T01:20:35+00:00 virtual1 rsyslogd: [origin software="rsyslogd" swVersion="8.2302.0" x-pid="707" x-info="https://www.rsyslog.com"] start
+2025-01-13T01:20:35+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:20:35+00:00 virtual1 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:20:39+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-rywnhtvvytekjfnmtfukrblaczpiljsq ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736731238.830559-1009-164292235704967/AnsiballZ_setup.py'
+2025-01-13T01:20:39+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:20:40+00:00 virtual1 ansible-ansible.legacy.setup: Invoked with gather_subset=['all'] gather_timeout=10 filter=[] fact_path=/etc/ansible/facts.d
+2025-01-13T01:20:40+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:20:40+00:00 virtual1 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:20:41+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-mfzluukwvykgxubueqdrbkcwgwnowhhu ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736731240.945626-1019-190553558854738/AnsiballZ_apt.py'
+2025-01-13T01:20:41+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:20:41+00:00 virtual1 ansible-apt: Invoked with name=mariadb-server state=present update_cache=True package=['mariadb-server'] update_cache_retries=5 update_cache_retry_max_delay=12 cache_valid_time=0 purge=False force=False upgrade=no dpkg_options=force-confdef,force-confold autoremove=False autoclean=False fail_on_autoremove=False only_upgrade=False force_apt_get=False clean=False allow_unauthenticated=False allow_downgrade=False allow_change_held_packages=False lock_timeout=60 deb=None default_release=None install_recommends=None policy_rc_d=None
+2025-01-13T01:20:57+00:00 virtual1 groupadd[1255]: group added to /etc/group: name=mysql, GID=103
+2025-01-13T01:20:57+00:00 virtual1 groupadd[1255]: group added to /etc/gshadow: name=mysql
+2025-01-13T01:20:57+00:00 virtual1 groupadd[1255]: new group: name=mysql, GID=103
+2025-01-13T01:20:57+00:00 virtual1 useradd[1263]: new user: name=mysql, UID=102, GID=103, home=/nonexistent, shell=/bin/false, from=none
+2025-01-13T01:20:57+00:00 virtual1 chfn[1270]: changed user 'mysql' information
+2025-01-13T01:21:00+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:21:00+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:21:01+00:00 virtual1 mariadb-server.postinst[1687]: 2025-01-13  1:21:01 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+2025-01-13T01:21:04+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:21:04+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:21:05+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:21:05+00:00 virtual1 systemd[1]: Reloading.
+2025-01-13T01:21:07+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:21:07+00:00 virtual1 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:21:07+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-pwghrouowuublmrahkrjubbphtvevspq ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736731267.5270236-1057-172478103031131/AnsiballZ_apt.py'
+2025-01-13T01:21:07+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:21:08+00:00 virtual1 ansible-apt: Invoked with name=python3-pymysql state=present update_cache=True package=['python3-pymysql'] update_cache_retries=5 update_cache_retry_max_delay=12 cache_valid_time=0 purge=False force=False upgrade=no dpkg_options=force-confdef,force-confold autoremove=False autoclean=False fail_on_autoremove=False only_upgrade=False force_apt_get=False clean=False allow_unauthenticated=False allow_downgrade=False allow_change_held_packages=False lock_timeout=60 deb=None default_release=None install_recommends=None policy_rc_d=None
+2025-01-13T01:21:17+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:21:17+00:00 virtual1 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:21:18+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-mbyjvncabjufvuxjaeeudfkjhkbjklgw ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736731277.6660855-1077-61076336228066/AnsiballZ_systemd.py'
+2025-01-13T01:21:18+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:21:19+00:00 virtual1 ansible-ansible.legacy.systemd: Invoked with name=mariadb state=started enabled=True daemon_reload=False daemon_reexec=False scope=system no_block=False force=None masked=None
+2025-01-13T01:21:19+00:00 virtual1 systemd[1]: Starting mariadb.service - MariaDB 10.11.6 database server...
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] Starting MariaDB 10.11.6-MariaDB-0+deb12u1 source revision  as process 2095
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: Compressed tables use zlib 1.2.13
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: Number of transaction pools: 1
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: Using liburing
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: Completed initialization of buffer pool
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: Buffered log writes (block size=512 bytes)
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: End of log at LSN=45614
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: 128 rollback segments are active.
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: log sequence number 45614; transaction id 14
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] Plugin 'FEEDBACK' is disabled.
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] Server socket created on IP: '127.0.0.1'.
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] InnoDB: Buffer pool(s) load completed at 250113  1:21:19
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:19 0 [Note] /usr/sbin/mariadbd: ready for connections.
+2025-01-13T01:21:19+00:00 virtual1 mariadbd[2095]: Version: '10.11.6-MariaDB-0+deb12u1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Debian 12
+2025-01-13T01:21:19+00:00 virtual1 systemd[1]: Started mariadb.service - MariaDB 10.11.6 database server.
+2025-01-13T01:21:19+00:00 virtual1 /etc/mysql/debian-start[2112]: Upgrading MySQL tables if necessary.
+2025-01-13T01:21:19+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:21:19+00:00 virtual1 /etc/mysql/debian-start[2123]: Checking for insecure root accounts.
+2025-01-13T01:21:19+00:00 virtual1 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:21:19+00:00 virtual1 /etc/mysql/debian-start[2131]: Triggering myisam-recover for all MyISAM tables and aria-recover for all Aria tables
+2025-01-13T01:21:20+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-wdphzlbqwicqshytfjfypfdyrlfzuyxc ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736731280.1354268-1091-85148366099828/AnsiballZ_command.py'
+2025-01-13T01:21:20+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:21:20+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "CREATE DATABASE dvwa_db;" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T01:21:21+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:21:21+00:00 virtual1 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:21:21+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-xbsxuvpwxkdiibitrgqxkfsuqbfrkeki ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736731281.1666803-1099-161217929242869/AnsiballZ_command.py'
+2025-01-13T01:21:21+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:21:21+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "CREATE USER 'dvwa'@'localhost' IDENTIFIED BY 'azerty';" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T01:21:21+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:21:21+00:00 virtual1 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:21:22+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-gydfsgbfcktsgroqodydgffehvqvufci ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736731281.924701-1107-198702058611598/AnsiballZ_command.py'
+2025-01-13T01:21:22+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:21:22+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "GRANT ALL PRIVILEGES ON dvwa_db.* TO 'dvwa'@'10.1.3.10' IDENTIFIED BY 'azerty';" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T01:21:22+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:21:22+00:00 virtual1 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:21:22+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-wrqekqodvsruldlvqiibsvymzwedizps ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736731282.669773-1115-135348199365779/AnsiballZ_command.py'
+2025-01-13T01:21:22+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:21:23+00:00 virtual1 ansible-ansible.legacy.command: Invoked with _raw_params=mysql -e "FLUSH PRIVILEGES" _uses_shell=False expand_argument_vars=True stdin_add_newline=True strip_empty_ends=True argv=None chdir=None executable=None creates=None removes=None stdin=None
+2025-01-13T01:21:23+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:21:23+00:00 virtual1 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:21:23+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-auemzdouaqbpujjjtbmbqicyctnpgylm ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736731283.426789-1123-90233967320903/AnsiballZ_lineinfile.py'
+2025-01-13T01:21:23+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:21:24+00:00 virtual1 ansible-lineinfile: Invoked with path=/etc/mysql/mariadb.conf.d/50-server.cnf regexp=^bind-address line=bind-address = 0.0.0.0 state=present backrefs=False create=False backup=False firstmatch=False unsafe_writes=False search_string=None insertafter=None insertbefore=None validate=None mode=None owner=None group=None seuser=None serole=None selevel=None setype=None attributes=None
+2025-01-13T01:21:24+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:21:24+00:00 virtual1 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:21:24+00:00 virtual1 sudo:  ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c 'echo BECOME-SUCCESS-gutqagbrxqziohkpdzagykxbburmgeeq ; /usr/bin/python3.11 /home/ansible/.ansible/tmp/ansible-tmp-1736731284.4056928-1137-60405335682755/AnsiballZ_systemd.py'
+2025-01-13T01:21:24+00:00 virtual1 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2025-01-13T01:21:25+00:00 virtual1 ansible-ansible.legacy.systemd: Invoked with name=mariadb state=restarted daemon_reload=False daemon_reexec=False scope=system no_block=False enabled=None force=None masked=None
+2025-01-13T01:21:25+00:00 virtual1 systemd[1]: Stopping mariadb.service - MariaDB 10.11.6 database server...
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:25 0 [Note] /usr/sbin/mariadbd (initiated by: unknown): Normal shutdown
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:25 0 [Note] InnoDB: FTS optimize thread exiting.
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:25 0 [Note] InnoDB: Starting shutdown...
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:25 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:25 0 [Note] InnoDB: Buffer pool(s) dump completed at 250113  1:21:25
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:25 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:25 0 [Note] InnoDB: Shutdown completed; log sequence number 47204; transaction id 15
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2095]: 2025-01-13  1:21:25 0 [Note] /usr/sbin/mariadbd: Shutdown complete
+2025-01-13T01:21:25+00:00 virtual1 systemd[1]: mariadb.service: Deactivated successfully.
+2025-01-13T01:21:25+00:00 virtual1 systemd[1]: Stopped mariadb.service - MariaDB 10.11.6 database server.
+2025-01-13T01:21:25+00:00 virtual1 systemd[1]: mariadb.service: Consumed 1.162s CPU time.
+2025-01-13T01:21:25+00:00 virtual1 systemd[1]: Starting mariadb.service - MariaDB 10.11.6 database server...
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] Starting MariaDB 10.11.6-MariaDB-0+deb12u1 source revision  as process 2365
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: Compressed tables use zlib 1.2.13
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: Number of transaction pools: 1
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: Using liburing
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: Completed initialization of buffer pool
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: Buffered log writes (block size=512 bytes)
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: End of log at LSN=47204
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: 128 rollback segments are active.
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: log sequence number 47204; transaction id 16
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Note] Plugin 'FEEDBACK' is disabled.
+2025-01-13T01:21:25+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:25 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+2025-01-13T01:21:26+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:26 0 [Note] Server socket created on IP: '0.0.0.0'.
+2025-01-13T01:21:26+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:26 0 [Note] InnoDB: Buffer pool(s) load completed at 250113  1:21:26
+2025-01-13T01:21:26+00:00 virtual1 mariadbd[2365]: 2025-01-13  1:21:26 0 [Note] /usr/sbin/mariadbd: ready for connections.
+2025-01-13T01:21:26+00:00 virtual1 mariadbd[2365]: Version: '10.11.6-MariaDB-0+deb12u1'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Debian 12
+2025-01-13T01:21:26+00:00 virtual1 systemd[1]: Started mariadb.service - MariaDB 10.11.6 database server.
+2025-01-13T01:21:26+00:00 virtual1 /etc/mysql/debian-start[2380]: Upgrading MySQL tables if necessary.
+2025-01-13T01:21:26+00:00 virtual1 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-13T01:21:26+00:00 virtual1 sshd[57]: syslogin_perform_logout: logout() returned an error
+2025-01-13T01:21:26+00:00 virtual1 /etc/mysql/debian-start[2395]: Checking for insecure root accounts.
+2025-01-13T01:21:26+00:00 virtual1 /etc/mysql/debian-start[2399]: Triggering myisam-recover for all MyISAM tables and aria-recover for all Aria tables
+2025-01-13T01:22:25+00:00 virtual1 sshd[63]: Received disconnect from 10.1.255.254 port 48606:11: disconnected by user
+2025-01-13T01:22:25+00:00 virtual1 sshd[63]: Disconnected from user ansible 10.1.255.254 port 48606
+2025-01-13T01:22:25+00:00 virtual1 sshd[57]: pam_unix(sshd:session): session closed for user ansible
+2025-01-13T01:24:08+00:00 virtual1 systemd[1]: Received SIGTERM.
+2025-01-13T01:24:08+00:00 virtual1 systemd[1]: Reexecuting.
