@@ -43,28 +43,19 @@
         dest: /var/www/html/DVWA/config/config.inc.php
         remote_src: yes
 
-- name: Update config.inc.php for DVWA database connection
+- name: Set allow_url_include to On in php.ini
   hosts: dmz
   become: true
   become_method: sudo
   tasks:
-    - name: Update DB_SERVER in config.inc.php
-      command: >
-        sed -i "s/$_DVWA\[\s*\'db_server\'\s*\]\s*=\s*\'[^\']*\'/$_DVWA[\'db_server\'] = getenv(\'DB_SERVER\') ?: \'10.0.1.10\';/" /var/www/html/DVWA/config/config.inc.php
+    - name: Update allow_url_include in php.ini
+      lineinfile:
+        path: "/etc/php/8.2/apache2/php.ini"
+        regexp: '^allow_url_include\s*='
+        line: 'allow_url_include = On'
+        backrefs: yes
 
-    - name: Update DB_DATABASE in config.inc.php
-      command: >
-        sed -i "s/$_DVWA\[\s*\'db_database\'\s*\]\s*=\s*\'[^\']*\'/$_DVWA[\'db_database\'] = getenv(\'DB_DATABASE\') ?: \'dvwa_db\';/" /var/www/html/DVWA/config/config.inc.php
-
-    - name: Update DB_USER in config.inc.php
-      command: >
-        sed -i "s/$_DVWA\[\s*\'db_user\'\s*\]\s*=\s*\'[^\']*\'/$_DVWA[\'db_user\'] = getenv(\'DB_USER\') ?: \'dvwa\';/" /var/www/html/DVWA/config/config.inc.php
-
-    - name: Update DB_PASSWORD in config.inc.php
-      command: >
-        sed -i "s/$_DVWA\[\s*\'db_password\'\s*\]\s*=\s*\'[^\']*\'/$_DVWA[\'db_password\'] = getenv(\'DB_PASSWORD\') ?: \'azerty\';/" /var/www/html/DVWA/config/config.inc.php
-
-    - name: Restart Apache
+    - name: Restart Apache to apply changes
       service:
         name: apache2
         state: restarted
