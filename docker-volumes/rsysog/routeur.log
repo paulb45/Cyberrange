@@ -1,1 +1,10 @@
 
+2025-01-14T08:01:27+00:00 routeur systemd[1]: Listening on syslog.socket - Syslog Socket.
+2025-01-14T08:01:27+00:00 routeur systemd[1]: Starting rsyslog.service - System Logging Service...
+2025-01-14T08:01:27+00:00 routeur systemd[1]: Started rsyslog.service - System Logging Service.
+2025-01-14T08:01:27+00:00 routeur rsyslogd: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2302.0]
+2025-01-14T08:01:27+00:00 routeur rsyslogd: [origin software="rsyslogd" swVersion="8.2302.0" x-pid="904" x-info="https://www.rsyslog.com"] start
+2025-01-14T08:01:28+00:00 routeur sudo: pam_unix(sudo:session): session closed for user root
+2025-01-14T08:01:28+00:00 routeur sshd[444]: syslogin_perform_logout: logout() returned an error
+2025-01-14T08:01:58+00:00 routeur systemd[1]: Received SIGTERM.
+2025-01-14T08:01:59+00:00 routeur systemd[1]: Reexecuting.

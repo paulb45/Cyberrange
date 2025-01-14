@@ -1,1 +1,10 @@
 
+2025-01-14T08:01:29+00:00 virtual2 systemd[1]: Listening on syslog.socket - Syslog Socket.
+2025-01-14T08:01:29+00:00 virtual2 systemd[1]: Starting rsyslog.service - System Logging Service...
+2025-01-14T08:01:29+00:00 virtual2 systemd[1]: Started rsyslog.service - System Logging Service.
+2025-01-14T08:01:29+00:00 virtual2 rsyslogd: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2302.0]
+2025-01-14T08:01:29+00:00 virtual2 rsyslogd: [origin software="rsyslogd" swVersion="8.2302.0" x-pid="2667" x-info="https://www.rsyslog.com"] start
+2025-01-14T08:01:29+00:00 virtual2 sudo: pam_unix(sudo:session): session closed for user root
+2025-01-14T08:01:29+00:00 virtual2 sshd[266]: syslogin_perform_logout: logout() returned an error
+2025-01-14T08:01:59+00:00 virtual2 systemd[1]: Received SIGTERM.
+2025-01-14T08:01:59+00:00 virtual2 systemd[1]: Reexecuting.

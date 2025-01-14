@@ -24,8 +24,9 @@ sudo docker compose exec -T -u ansible ansible /bin/sh -c "cd /home/ansible/ansi
 	ansible-playbook networkconfig.yaml && \
 	ansible-playbook routeuriptables.yaml && \
 	ansible-playbook install_bdd.yaml && \
-	ansible-playbook dvwa.yaml"
-#	ansible-playbook install_smb.yaml && \
-#	ansible-playbook mount_smb.yaml"
-#        ansible-playbook rsyslog.yaml && \
+	ansible-playbook dvwa.yaml && \
+	ansible-playbook linkwa_to_db.yaml && \
+	ansible-playbook install_smb.yaml && \
+	ansible-playbook mount_smb.yaml && \
+        ansible-playbook rsyslog.yaml"
 
