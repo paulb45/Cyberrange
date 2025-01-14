@@ -30,3 +30,10 @@
         regexp: "^\\$_DVWA\\[\\s*'db_password'\\s*\\]\\s*="
         line: "$_DVWA['db_password'] = getenv('DB_PASSWORD') ?: 'azerty';"
         backrefs: yes
+
+    - name: Restart apache2 service
+      service:
+        name: apache2
+        state: restarted
+
+
